@@ -25,7 +25,7 @@ with st.sidebar:
 app = MultiPage() # Create an instance of the app 
 
 st.title("AI4QE") 
-st.cation("AI for Quality Education")
+st.caption("AI for Quality Education")
 
 # Calling all applications
 app.add_page("Summarizer", summarizer.app)

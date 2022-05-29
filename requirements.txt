@@ -1,9 +1,8 @@
-txtai @ git+https://github.com/neuml/txtai@410cdc8382ba2057cbead8d8c5e755b9fe7caf1f
 docx2txt==0.8
 openai==0.19.0
 pdfplumber==0.6.2
 streamlit==1.9.0
 txtai==4.5.0
 beautifulsoup4
-txtai[pipeline,workflow]
+txtai[pipeline,workflow, datasets]
 protobuf~=3.19.0
