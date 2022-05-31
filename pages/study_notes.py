@@ -18,5 +18,5 @@ def app():
     presence_penalty=0.0
   )
 
-  st.json(response)
+  st.text(response.choices[0].text)
 

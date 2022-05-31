@@ -4,5 +4,7 @@ pdfplumber==0.6.2
 streamlit==1.9.0
 txtai==4.5.0
 beautifulsoup4
-txtai[pipeline,workflow, datasets]
+txtai[pipeline,workflow]
 protobuf~=3.19.0
+docarray==0.13.17
+jsonlines==3.0.0

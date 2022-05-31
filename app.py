@@ -1,9 +1,8 @@
 #import libraries
 import streamlit as st 
 from multipage import MultiPage
-from pages import summarizer, semantic_doc, study_notes
+from pages import summarizer, semantic_doc, semantic_web, study_notes
 import streamlit.components.v1 as components
-from datasets import load_dataset
 
 # Configures the default settings of the page.
 st.set_page_config(
@@ -13,7 +12,7 @@ st.set_page_config(
      initial_sidebar_state="expanded",
  )
 
-st.sidebar.text("> `Alpha version 1.1.1`")
+st.sidebar.markdown("> `Alpha version 1.1.1`")
 with st.sidebar:
      components.html(
     """<a class="github-button" href="https://github.com/dotaadarsh/AI4QE" data-color-scheme="no-preference: dark_high_contrast; light: dark_high_contrast; dark: dark_high_contrast;" data-icon="octicon-star" aria-label="Star madmax-ak/Clang-cheatsheet on GitHub">Star</a>
@@ -24,13 +23,15 @@ with st.sidebar:
 
 app = MultiPage() # Create an instance of the app 
 
-st.title("AI4QE") 
-st.caption("AI for Quality Education")
+st.image("/workspace/hackatra/asserts/ai4qe.png")
+st.sidebar.title("AI4QE") 
+st.sidebar.caption("AI for Quality Education")
 
 # Calling all applications
 app.add_page("Summarizer", summarizer.app)
-app.add_page("Q&A", semantic_doc.app)
+app.add_page("Semantic-Doc", semantic_doc.app)
+app.add_page("Semantic-Web", semantic_web.app)
 app.add_page("Study Notes", study_notes.app)
 
 # The main app
-app.run()  
+app.run()

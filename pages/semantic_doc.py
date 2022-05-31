@@ -1,19 +1,24 @@
-from datasets import load_dataset
-from txtai.embeddings import Embeddings
+from docarray import Document, DocumentArray
 import streamlit as st
+import os
+import openai
 
+def app(): 
 
-ds = load_dataset("web_questions", split="train")
-# Create embeddings index with content enabled. The default behavior is to only store indexed vectors.
-embeddings = Embeddings({"path": "sentence-transformers/nli-mpnet-base-v2", "content": True})
-# Map question to text and store content
-embeddings.index([(uid, {"url": row["url"], "text": row["question"], "answer": ", ".join(row["answers"])}, None) for uid, row in enumerate(ds)])
+    txt = st.text_input('PLeas enter .txt file URL', 'https://www.gutenberg.org/files/1342/1342-0.txt')
 
-def app():
+    if txt is not None:
+        st.markdown(f"[View file]({txt})")         
+        d = Document(uri=txt).load_uri_to_text()
+        da = DocumentArray(Document(text=s.strip()) for s in d.text.split('\n') if s.strip())
+        da.apply(lambda d: d.embed_feature_hashing())
 
-  def question(text):
-    return embeddings.search(f"select text, answer, score from txtai where similar('{text}') limit 1")
+        query = st.text_input("Enter the query", "she entered the room")
 
-  query = st.text_input("Question please", "What is the timezone of NYC?")
-  st.json(question(query))
-
+        q = (
+            Document(text=query)
+            .embed_feature_hashing()
+            .match(da, limit=5, exclude_self=True, metric='jaccard', use_scipy=True)
+        )
+        
+        st.json(q.matches[:, ('text', 'scores__jaccard')])
