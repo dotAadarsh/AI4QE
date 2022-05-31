@@ -23,7 +23,7 @@ with st.sidebar:
 
 app = MultiPage() # Create an instance of the app 
 
-st.image("/workspace/hackatra/asserts/ai4qe.png")
+st.image("https://github.com/dotaadarsh/AI4QE/blob/main/asserts/ai4qe.png")
 st.sidebar.title("AI4QE") 
 st.sidebar.caption("AI for Quality Education")
 
