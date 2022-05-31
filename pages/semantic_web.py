@@ -7,7 +7,7 @@ import jsonlines
 def app(): 
 
     with st.expander("Resource file"):
-        with jsonlines.open('/workspace/hackatra/asserts/resources.jsonl') as f:
+        with jsonlines.open('asserts/resources.jsonl') as f:
             for line in f.iter():
                 st.text(line)
 
