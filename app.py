@@ -17,7 +17,7 @@ with st.sidebar:
      components.html(
     """<a class="github-button" href="https://github.com/dotaadarsh/AI4QE" data-color-scheme="no-preference: dark_high_contrast; light: dark_high_contrast; dark: dark_high_contrast;" data-icon="octicon-star" aria-label="Star madmax-ak/Clang-cheatsheet on GitHub">Star</a>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<a href="https://twitter.com/madmax_ak?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @madmax_ak</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://twitter.com/dotaadarsh?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @dotaadarsh</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 """,
     height=30,)
 
