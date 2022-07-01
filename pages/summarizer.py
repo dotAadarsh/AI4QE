@@ -16,22 +16,23 @@ def app():
     st.title('Text summarizer')
     
     def summarizer(value) :
-
-        response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt=f"Summarize this for a {grade} student:\n\n {value}",
-        temperature=0.7,
-        max_tokens=64,
-        top_p=1.0,
-        frequency_penalty=0.0,
-        presence_penalty=0.0
-        )
-        
-        st.success("Successfully Summarized 👇")
-        st.write(response["choices"][0]["text"])
-        with st.sidebar.expander("JSON Output"):
-            st.json(response) 
-        
+        try: 
+            response = openai.Completion.create(
+            engine="text-davinci-002",
+            prompt=f"Summarize this for a {grade} student:\n\n {value}",
+            temperature=0.7,
+            max_tokens=64,
+            top_p=1.0,
+            frequency_penalty=0.0,
+            presence_penalty=0.0
+            )
+            
+            st.success("Successfully Summarized 👇")
+            st.write(response["choices"][0]["text"])
+            with st.sidebar.expander("JSON Output"):
+                st.json(response) 
+        except:
+            st.info("OpenAI trial limit exceeded")
 
     Option = st.selectbox("Choose the format", ('Text Input', 'Upload PDF', 'Web Article'))
 
