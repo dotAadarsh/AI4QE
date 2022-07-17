@@ -26,7 +26,7 @@ AI4QE is an app which help to provide the Quality Education with the help of Art
 Don't forget to change the API KEY from OpenAI in the .streamlit/secreats.toml file. The Gitpod will automatically build's the environment. Finally, enter the command as follows in the terminal to get the app running.
 >    streamlit run app.py
 ### Media
-![Homepage](https://github.com/dotaadarsh/AI4QE/blob/main/asserts/trail_gif.gif) 
+![Homepage](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/997/133/datas/original.png) 
 [AI4QE - YT VIDEO](https://youtu.be/J1n9FTCwLu0)
 
 ### Try it out!
