@@ -30,4 +30,4 @@ Don't forget to change the API KEY from OpenAI in the .streamlit/secreats.toml f
 [![AI4QE-YT-DEMO](asserts/ai4qe_thumbnail.png)](https://youtu.be/J1n9FTCwLu0)
 
 ### Try it out!
-[AI4QE](https://share.streamlit.io/dotaadarsh/ai4qe/main/app.py)
+[AI4QE](https://ai4qedu.streamlit.app/)
