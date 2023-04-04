@@ -1,6 +1,9 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
+OpenAI_Key = st.secrets["OPENAI_KEY"]
+
+
 st.set_page_config(
     page_title="AI4QE",
     page_icon="https://cdn-icons-png.flaticon.com/512/2617/2617909.png",
@@ -32,7 +35,7 @@ Let's see what AI4QE does!
 AI4QE is an app which help to provide the Quality Education with the help of Artificial Intelligence.  It is powered by [OpenAI](https://openai.com/), [HuggingFace](https://huggingface.co/), DocArray and Streamlit. 
 
  - **Text Summarizer** - It is a automatic text summarization page which supports different types of text data from different sources.
- - **Semantic Searh** - Semantic search is a data searching technique in which a search query not only finds keywords, but also determines the intent and contextual meaning of the words a person is using for search. With the help of OpenAI it performs the [semantic search](https://beta.openai.com/docs/guides/search) on the given document and provide the best result.
+ - **Semantic Search** - Semantic search is a data searching technique in which a search query not only finds keywords, but also determines the intent and contextual meaning of the words a person is using for search. With the help of OpenAI it performs the [semantic search](https://beta.openai.com/docs/guides/search) on the given document and provide the best result.
  - **Study Notes** - This page will provides the study notes on the given query.  It is again fully powered by the OpenAI GPT-3 engine. 
 
 ### Tools & Software used
@@ -46,3 +49,4 @@ AI4QE is an app which help to provide the Quality Education with the help of Art
  - [txtai](https://github.com/neuml/txtai) - txtai executes machine-learning workflows to transform data and build AI-powered semantic search applications.
 
 """)
+ 

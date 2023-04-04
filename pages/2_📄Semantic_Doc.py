@@ -3,7 +3,6 @@ import streamlit as st
 import openai
 import re
 
-
 def semantic(txt):
     if txt is not None:
         st.markdown(f"[View file]({txt})")
@@ -23,11 +22,13 @@ def semantic(txt):
         )
 
         result_json = q.matches[:, ('text', 'scores__jaccard')]
-        st.sidebar.json(result_json)
+        # st.sidebar.json(result_json)
         return result_json
 
 
 def main():
+    st.header("Semantic Document Search")
+    st.caption("Powered by JinaAI")
     txt = st.text_input('Please enter .txt file URL',
                         'https://www.gutenberg.org/files/1342/1342-0.txt')
 
@@ -38,7 +39,7 @@ def main():
         match = re.search(r"'value':\s*([\d.]+)", value)
         if match:
             value = float(match.group(1))
-            st.write(result[0][i] + f"Score: `{value}`")
+            st.write(result[0][i] + f" Score: `{value}`")
 
 
 if __name__ == '__main__':
