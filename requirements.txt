@@ -3,6 +3,7 @@ docarray==0.13.17
 docx2txt==0.8
 google-api-python-client==2.83.0
 httplib2==0.22.0
+itranslate==0.1.2
 jsonlines==3.0.0
 mdtable==0.2
 openai==0.19.0
