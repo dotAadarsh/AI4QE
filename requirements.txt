@@ -1,6 +1,7 @@
 docarray==0.13.17
 docx2txt==0.8
 google-api-python-client==2.83.0
+httplib2==0.22.0
 jsonlines==3.0.0
 mdtable==0.2
 openai==0.19.0
@@ -10,6 +11,4 @@ streamlit-chat==0.0.2.2
 streamlit-pills==0.3.0
 tiktoken==0.3.2
 tqdm==4.65.0
-transformers==4.27.3
-txtai==4.5.0
 youtube-transcript-api==0.5.0
