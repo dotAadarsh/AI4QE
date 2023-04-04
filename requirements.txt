@@ -15,3 +15,4 @@ streamlit-pills==0.3.0
 tiktoken==0.3.2
 tqdm==4.65.0
 youtube-transcript-api==0.5.0
+httpx>=0.23.0 # not directly required, pinned by Snyk to avoid a vulnerability
