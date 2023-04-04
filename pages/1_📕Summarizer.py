@@ -4,6 +4,7 @@ import pdfplumber
 import json
 import requests
 from bs4 import BeautifulSoup
+from itranslate import itranslate as itrans
 
 OpenAI_Key = st.secrets["OPENAI_KEY"]
 
@@ -26,6 +27,10 @@ def main():
             if summarized_text:
                 st.success("Successfully summarized!")
                 st.write(summarized_text)
+                with st.expander("Translate the transcript"):
+                    st.info("Tamil - ta, Russian - ru, German - de, Japanese - ja [More lang will be added]")
+                    options = st.selectbox("Select the language", ("ta", "ru", "de", "ja"))
+                    st.text_area("Translated Text", itrans(summarized_text, to_lang = options))
 
     elif Option == 'Upload PDF':
         uploaded_file = st.file_uploader("Choose a file")
