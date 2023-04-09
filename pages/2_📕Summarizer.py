@@ -5,6 +5,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from itranslate import itranslate as itrans
+from languages import languages
 
 OpenAI_Key = st.secrets["OPENAI_KEY"]
 
@@ -27,10 +28,11 @@ def main():
             if summarized_text:
                 st.success("Successfully summarized!")
                 st.write(summarized_text)
-                with st.expander("Translate the transcript"):
-                    st.info("Tamil - ta, Russian - ru, German - de, Japanese - ja [More lang will be added]")
-                    options = st.selectbox("Select the language", ("ta", "ru", "de", "ja"))
-                    st.text_area("Translated Text", itrans(summarized_text, to_lang = options))
+                with st.expander("Translate"):
+                    to_lang = st.selectbox("Select the language", languages.values())
+                    dest = list(languages.keys())[list(languages.values()).index(to_lang)]
+                    st.write("language: ", dest)
+                    st.text_area("Translated Text", itrans(summarized_text, to_lang = dest))
 
     elif Option == 'Upload PDF':
         uploaded_file = st.file_uploader("Choose a file")

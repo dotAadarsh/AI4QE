@@ -22,7 +22,7 @@ def semantic_web(openai, input_query):
 
 
 def main():
-
+    st.error("Deprecated!")
     # openai_key = st.text_input("Please enter OpenAI key here")
     st.header("semantic search over a set of documents.")
     st.info("Deprecated - [More info](https://platform.openai.com/docs/guides/search/search-deprecated)")

@@ -91,7 +91,7 @@ def get_videos():
     request = youtube.search().list(
         part="id,snippet",
         channelId=channel_id,
-        maxResults=8,
+        maxResults=4,
         order="date",
         type="video",
         videoDuration="short"
@@ -110,9 +110,8 @@ def get_videos():
 
 def main():
 
-    st.title("Transcriber")
-    st.caption("Right tool for video analysis")
-
+    st.title("YouTXT")
+    st.sidebar.info("For this demo, I have integrated First Post YT channel")
     videos = get_videos()
 
     for video in videos:
